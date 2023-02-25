@@ -9,3 +9,8 @@ docker build . -t rust_builder
 ```
 docker run -it --rm --name builder -v $PWD/src:/usr/src/myapp rust_builder cargo new --lib [project name]
 ```
+
+# ビルド
+```
+docker run -it --rm --name builder -v $PWD/src:/usr/src/myapp rust_builder wasm-pack build --target web
+```
