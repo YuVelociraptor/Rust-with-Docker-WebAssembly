@@ -5,12 +5,17 @@
 docker build . -t rust_builder
 ```
 
-# プロジェクト作成
+## docker内で作業
 ```
-docker run -it --rm --name builder -v $PWD/src:/usr/src/myapp rust_builder cargo new --lib [project name]
+docker run -it --rm --name builder -v $PWD/src:/usr/src/myapp rust_builder 
 ```
 
-# ビルド
+### プロジェクト作成
 ```
-docker run -it --rm --name builder -v $PWD/src:/usr/src/myapp rust_builder wasm-pack build --target web
+cargo new --lib [project name]
+```
+
+### ビルド
+```
+wasm-pack build --target web
 ```
